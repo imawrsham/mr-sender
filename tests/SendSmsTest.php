@@ -11,7 +11,7 @@ class SendSmsTest extends TestCase
 
     public function setUp():void
     {
-        $this->aksms= new Sms(USER_NAME, USER_PASS);
+        $this->aksms = new Sms(USER_NAME, USER_PASS);
     }
 
     public function testSendTextSms()
