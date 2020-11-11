@@ -1,16 +1,16 @@
 {
-    "name": ":vendor_name/:package_name",
-    "description": ":package_description",
+    "name": "ak/mr-sender-repeater",
+    "description": "send sms and fax",
     "keywords": [
-        ":vendor_name",
-        ":package_name"
+        "ak",
+        "mr-sender-repeater"
     ],
-    "homepage": "https://github.com/:vendor_name/:package_name",
+    "homepage": "https://github.com/ak/mr-sender-repeater",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
+            "name": "Fatemeh Sohrabi",
+            "email": "fs.sohrabi70@gmail.com",
             "homepage": "https://spatie.be",
             "role": "Developer"
         }
@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Skeleton\\": "src"
+            "Ak\\MrSenderRepeater\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Skeleton\\Tests\\": "tests"
+            "Ak\\MrSenderRepeater\\Tests\\": "tests"
         }
     },
     "scripts": {

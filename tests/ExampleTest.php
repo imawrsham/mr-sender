@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Skeleton\Tests;
+namespace Ak\MrSenderRepeater\Tests;
 
 use PHPUnit\Framework\TestCase;
 
