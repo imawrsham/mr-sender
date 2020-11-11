@@ -3,6 +3,7 @@
 
 namespace Ak\MrSenderRepeater;
 
+<<<<<<< HEAD
 
 use Ak\MrSenderRepeater\Helpers\CommonHelper;
 
@@ -46,4 +47,8 @@ class Fax
         )));
         return $response;
     }
+=======
+class Fax
+{
+>>>>>>> 7c189f6042c19722f52a55277aad70e0e934dc2c
 }
