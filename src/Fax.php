@@ -3,8 +3,6 @@
 
 namespace Ak\MrSenderRepeater;
 
-
 class Fax
 {
-
 }

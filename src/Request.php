@@ -3,24 +3,22 @@
 
 namespace Ak\MrSenderRepeater;
 
-use Ak\MrSenderRepeater\Exception;
-
 class Request
 {
     /**
      * @param array Default options for the curl request
      */
-    private $options = array(
+    private $options = [
         CURLOPT_TIMEOUT => 10,
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_SSL_VERIFYPEER => false,
         CURLOPT_POST => true,
-    );
+    ];
 
     /**
      * @param array All values which are provided through value() or __construct()
      */
-    private $values = array();
+    private $values = [];
 
     /**
      * AspsmsRequest constructor requires call service url.
@@ -28,7 +26,7 @@ class Request
      * @param string $url The called webservice url
      * @param array $values Values can be set direct in the class construct or via the value() method.
      */
-    public function __construct($url, array $values = array())
+    public function __construct($url, array $values = [])
     {
         // assign CURLOPT_URL into options array
         $this->options[CURLOPT_URL] = $url;
@@ -41,7 +39,7 @@ class Request
      *
      * @param string $key The POST-FIELD-KEY
      * @param string $value The value of the postfield
-     * @return boolean
+     * @return bool
      */
     public function value($key, $value)
     {
@@ -54,12 +52,12 @@ class Request
     /**
      * Unset all values from the values array to make new requests.
      *
-     * @return boolean
+     * @return bool
      */
     public function flush()
     {
         // overwrite $values with empty array()
-        $this->values = array();
+        $this->values = [];
 
         return true;
     }
@@ -73,7 +71,7 @@ class Request
      */
     private function buildPostfields($values)
     {
-        $params = array();
+        $params = [];
         foreach ($values as $k => $v) {
             $params[] = $k.'='.$v;
         }
@@ -117,5 +115,4 @@ class Request
 
         throw new Exception(sprintf("Invalid API Response '%s'", trim($response)));
     }
-
 }

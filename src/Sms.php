@@ -1,14 +1,12 @@
 <?php
 
 namespace Ak\MrSenderRepeater;
-use Ak\MrSenderRepeater\Exception;
-use Ak\MrSenderRepeater\Request;
 
 class Sms
 {
-    private $userkey=null;
-    private $password=null;
-    private $currentOptions = array();
+    private $userkey = null;
+    private $password = null;
+    private $currentOptions = [];
     public $server = "https://www.mr-sender.com/";
     private $sendStatus = null;
 
@@ -16,7 +14,7 @@ class Sms
      * @var array Contains all valid option parameters which can be delivered trough option
      * arguments in functions.
      */
-    private $validOptions = array(
+    private $validOptions = [
         "Originator",
         "DeferredDeliveryTime",
         "FlashingSMS",
@@ -28,8 +26,8 @@ class Sms
         "MessageText",
         "Recipients",
         "TransactionReferenceNumbers",
-    );
-    private $sendStatusCodes = array(
+    ];
+    private $sendStatusCodes = [
         1 => "Ok",
         2 => "Connect failed.",
         3 => "Authorization failed (wrong userkey and/or password).",
@@ -55,7 +53,7 @@ class Sms
         23 => "Missing transaction reference number.",
         24 => "Service temporarily not available.",
         25 => "User access denied.",
-    );
+    ];
 
     public function __construct($userkey, $password)
     {
@@ -66,12 +64,12 @@ class Sms
         // set optional options if any provided
     }
 
-    public function sendTextSms($message, array $recipients, array $options = array())
+    public function sendTextSms($message, array $recipients, array $options = [])
     {
         // set message option
         $this->setOption("MessageText", $message);
         // set recipients option
-        $recipientList = array();
+        $recipientList = [];
         // collect all recipients with teir
         foreach ($recipients as $tracknr => $number) {
             // according to the docs multiple recipients must look like this: <NUMBER>:<TRACKNR>;<NUMBER>:<TRACKNR>
@@ -82,7 +80,7 @@ class Sms
         // optional options parameter to set values into currentOptions
         $this->setOptions($options);
         // start request width defined options for this action
-        $response = $this->request("SendTextSMS", $this->getOptions(array(
+        $response = $this->request("SendTextSMS", $this->getOptions([
             "Recipients",
             "AffiliateId",
             "MessageText",
@@ -93,12 +91,12 @@ class Sms
             "URLBufferedMessageNotification",
             "URLDeliveryNotification",
             "URLNonDeliveryNotification",
-        )));
+        ]));
 
         $result = $this->parseResponse($response);
 
         // verify if the status code exists in sendStatusCodes
-        if (!array_key_exists($result[1], $this->sendStatusCodes)) {
+        if (! array_key_exists($result[1], $this->sendStatusCodes)) {
             throw new Exception("Error while printing the response code into sendStatus. ResponseCode seems not valid. Response: \"{$response}\"");
         }
         // send the status as text value into $sendStatus
@@ -110,10 +108,11 @@ class Sms
 
         return true;
     }
+
     private function setOption($key, $value)
     {
         // see if key is in the validOptions list.
-        if (!in_array($key, $this->validOptions)) {
+        if (! in_array($key, $this->validOptions)) {
             throw new Exception("setOption: Could not find the option \"$key\" in the validOptions list!");
         }
         // set the options into the currentOptions list
@@ -131,9 +130,7 @@ class Sms
         return explode(":", $response);
     }
 
-
-
-    private function request($action, array $values = array())
+    private function request($action, array $values = [])
     {
         // build new AspsmsRequest-Object
         $request = new Request($this->server.$action, $this->prepareValues($values));
@@ -150,10 +147,10 @@ class Sms
     private function prepareValues($values)
     {
         // set default transfer values
-        $transferValues = array(
+        $transferValues = [
             'UserKey' => $this->userkey,
             'Password' => $this->password,
-        );
+        ];
         /// get the request values urlencode und utf8encode first.
         foreach ($values as $key => $value) {
             $transferValues[$key] = $value;
@@ -161,10 +158,11 @@ class Sms
         // return changed transfer values
         return $transferValues;
     }
+
     private function flush()
     {
         // set back the default empty array
-        $this->currentOptions = array();
+        $this->currentOptions = [];
         // set back send status buffer string
         $this->sendStatus = null;
     }
@@ -189,7 +187,7 @@ class Sms
     private function getOptions(array $optionKeys)
     {
         // return options array
-        $options = array();
+        $options = [];
         // foreach all option keys and see if some values are set in the currentOptions array
         foreach ($optionKeys as $key) {
             // see if this option is set in options list
@@ -202,5 +200,4 @@ class Sms
 
         return $options;
     }
-
 }
