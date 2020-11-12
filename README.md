@@ -50,8 +50,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Fatemeh Sohrabi](https://github.com/fsohrabi)
-- [All Contributors](../../contributors)
+- [AK Software GmbH](https://ak-software.com/)
 
 ## License
 
