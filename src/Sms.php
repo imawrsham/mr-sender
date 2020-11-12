@@ -1,7 +1,9 @@
 <?php
 
 namespace Ak\MrSenderRepeater;
+
 use Ak\MrSenderRepeater\Helpers\CommonHelper;
+
 class Sms
 {
     private $_username = null;
@@ -22,13 +24,13 @@ class Sms
         $this->_password = $_password;
         $this->commonHelper = new CommonHelper($this->_username, $this->_password, $this->server);
     }
+
     /**
      * @param $message
      * @param string $recipient
      * @return string
      * @throws Exception
      */
-
     public function sendTextSms($message, $recipient)
     {
         // set message option
@@ -38,11 +40,11 @@ class Sms
         $this->commonHelper->setOption("to", $recipient);
         // start request width defined options for this action
 
-        $response = $this->commonHelper->request("sms/send", $this->commonHelper->getOptions(array(
+        $response = $this->commonHelper->request("sms/send", $this->commonHelper->getOptions([
             "to",
             "content",
-        )));
+        ]));
+
         return $response;
     }
-
 }

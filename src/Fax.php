@@ -2,6 +2,7 @@
 
 
 namespace Ak\MrSenderRepeater;
+
 use Ak\MrSenderRepeater\Helpers\CommonHelper;
 
 class Fax
@@ -24,6 +25,7 @@ class Fax
         $this->_password = $_password;
         $this->commonHelper = new CommonHelper($this->_username, $this->_password, $this->server);
     }
+
     /**
      * @param $message
      * @param string $recipient
@@ -37,11 +39,11 @@ class Fax
         // se the recipients into the options list
         $this->commonHelper->setOption("to", $recipient);
         // start request width defined options for this action
-        $response = $this->commonHelper->request("fax/send", $this->commonHelper->getOptions(array(
+        $response = $this->commonHelper->request("fax/send", $this->commonHelper->getOptions([
             "to",
             "content",
-        )));
+        ]));
+
         return $response;
     }
 }
-
