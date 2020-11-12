@@ -44,6 +44,7 @@ class Request
     {
         // save values into values array (great comment)
         $this->values[$key] = $value;
+
         return true;
     }
 
@@ -70,6 +71,7 @@ class Request
         if ($response === false) {
             $response = curl_error($curl);
         }
+
         return $response;
     }
 }
