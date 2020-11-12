@@ -1,17 +1,17 @@
 {
     "name": "ak/mr-sender-repeater",
-    "description": "send sms and fax",
+    "description": "send SMS and Fax with MrSender",
     "keywords": [
         "ak",
         "mr-sender-repeater"
     ],
-    "homepage": "https://github.com/ak/mr-sender-repeater",
+    "homepage": "https://github.com/aksoftwaregmbh/mr-sender-wrapper",
     "license": "MIT",
     "authors": [
         {
-            "name": "Fatemeh Sohrabi",
-            "email": "fs.sohrabi70@gmail.com",
-            "homepage": "https://spatie.be",
+            "name": "AK Software GmbH",
+            "email": "amir@ak-software.com",
+            "homepage": "https://ak-software.com",
             "role": "Developer"
         }
     ],
@@ -44,15 +44,5 @@
         "sort-packages": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "funding": [
-        {
-            "type": "github",
-            "url": "https://github.com/sponsors/spatie"
-        },
-        {
-            "type": "other",
-            "url": "https://spatie.be/open-source/support-us"
-        }
-    ]
+    "prefer-stable": true
 }
