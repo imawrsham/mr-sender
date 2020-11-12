@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Ak\MrSenderRepeater;
+namespace AKSoftware\MrSenderWrapper;
 
 class Exception extends \Exception
 {

@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Ak\MrSenderRepeater;
+namespace AKSoftware\MrSenderWrapper;
 
-use Ak\MrSenderRepeater\Helpers\CommonHelper;
+use AKSoftware\MrSenderWrapper\Helpers\CommonHelper;
 
 class Fax
 {

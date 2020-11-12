@@ -1,8 +1,8 @@
 <?php
 
-namespace Ak\MrSenderRepeater\Tests;
+namespace AKSoftware\MrSenderWrapper\Tests;
 
-use Ak\MrSenderRepeater\Sms;
+use AKSoftware\MrSenderWrapper\Sms;
 use PHPUnit\Framework\TestCase;
 
 class SendSmsTest extends TestCase

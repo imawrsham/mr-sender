@@ -1,7 +1,7 @@
 # Changelog
 
-All notable changes to `mr-sender-repeater` will be documented in this file
+All notable changes to `mr-sender-wrapper` will be documented in this file
 
-## 1.0.0 - 202X-XX-XX
+## 1.0.0 - 2020-11-12
 
 - initial release

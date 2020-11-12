@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Ak\MrSenderRepeater\Helpers;
+namespace AKSoftware\MrSenderWrapper\Helpers;
 
-use Ak\MrSenderRepeater\Exception;
-use Ak\MrSenderRepeater\Request;
+use AKSoftware\MrSenderWrapper\Exception;
+use AKSoftware\MrSenderWrapper\Request;
 
 class CommonHelper
 {
