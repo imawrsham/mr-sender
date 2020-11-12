@@ -44,42 +44,8 @@ class Request
     {
         // save values into values array (great comment)
         $this->values[$key] = $value;
-
         return true;
     }
-
-<<<<<<< HEAD
-=======
-    /**
-     * Unset all values from the values array to make new requests.
-     *
-     * @return bool
-     */
-    public function flush()
-    {
-        // overwrite $values with empty array()
-        $this->values = [];
-
-        return true;
-    }
-
-    /**
-     * Could not use http_build_query() because of &, ; & : signs changing, need to build a
-     * simple function to build the strings.
-     *
-     * @param array $values Key value pared parameter values
-     * @return string
-     */
-    private function buildPostfields($values)
-    {
-        $params = [];
-        foreach ($values as $k => $v) {
-            $params[] = $k.'='.$v;
-        }
-
-        return implode("&", $params);
-    }
->>>>>>> 7c189f6042c19722f52a55277aad70e0e934dc2c
 
     /**
      * Initiates the main curl execution.
