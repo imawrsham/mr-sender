@@ -2,15 +2,12 @@
 
 
 namespace Ak\MrSenderRepeater;
-
-<<<<<<< HEAD
-
 use Ak\MrSenderRepeater\Helpers\CommonHelper;
 
 class Fax
 {
-    private $_username=null;
-    private $_password=null;
+    private $_username = null;
+    private $_password = null;
     public $server = "https://www.mr-sender.com/api/";
     public $commonHelper;
 
@@ -25,9 +22,8 @@ class Fax
         $this->_username = $_username;
         // save password
         $this->_password = $_password;
-        $this->commonHelper= new CommonHelper($this->_username,$this->_password,$this->server);
+        $this->commonHelper = new CommonHelper($this->_username, $this->_password, $this->server);
     }
-
     /**
      * @param $message
      * @param string $recipient
@@ -47,8 +43,5 @@ class Fax
         )));
         return $response;
     }
-=======
-class Fax
-{
->>>>>>> 7c189f6042c19722f52a55277aad70e0e934dc2c
 }
+
