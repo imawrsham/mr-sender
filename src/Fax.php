@@ -32,7 +32,7 @@ class Fax
      * @return string
      * @throws Exception
      */
-    public function sendHtmlFax($message,$recipient)
+    public function sendHtmlFax($message, $recipient)
     {
         // set message option
         $this->commonHelper->setOption("content", $message);
