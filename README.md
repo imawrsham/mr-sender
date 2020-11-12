@@ -30,10 +30,10 @@ $send = $aksoftwaresms->sendTextSms('<YOUR_SMS_MESSAGE>', 'RECIPIENT_NUMBER'
 );
 
 // create object class with originator option
-$aksoftwaresms = new Fax('<YOUR_USERNAME>', '<YOUR_PASSWORD>');
+$aksoftwarefax = new Fax('<YOUR_USERNAME>', '<YOUR_PASSWORD>');
 // set message and recipient with tracking their individual tracking number.
 
-$send = $aksoftwaresms->sendHtmlFax('<YOUR_HTML_MESSAGE>', 'RECIPIENT_NUMBER'
+$send = $aksoftwarefax->sendHtmlFax('<YOUR_HTML_MESSAGE>', 'RECIPIENT_NUMBER'
 );
 
 
