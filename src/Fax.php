@@ -50,7 +50,8 @@ class Fax
     /**
      * @return mixed
      */
-    public function getStatusMessage(){
+    public function getStatusMessage()
+    {
         return $this->commonHelper->statusMessage;
     }
 }
