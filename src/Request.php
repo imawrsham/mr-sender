@@ -20,7 +20,7 @@ class Request
     private $values = [];
 
     /**
-     * AspsmsRequest constructor requires call service url.
+     * Request constructor requires call service url.
      *
      * @param string $url The called webservice url
      * @param array $values Values can be set direct in the class construct or via the value() method.

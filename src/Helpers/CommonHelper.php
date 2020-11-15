@@ -11,6 +11,7 @@ class CommonHelper
     private $_username = null;
     private $_password = null;
     public $server = null;
+    public $statusMessage = "";
     /**
      * @var array Contains all valid option parameters which can be delivered trough option
      * arguments in functions.
@@ -128,5 +129,21 @@ class CommonHelper
         }
 
         return $options;
+    }
+
+    /**
+     * @param $response
+     * @return bool
+     */
+    public function setStatus($response)
+    {
+        $response = json_decode($response);
+        if ($response->result == "failed") {
+            $this->statusMessage = $response->message;
+            return false;
+        } else {
+            $this->statusMessage = "OK";
+            return true;
+        }
     }
 }

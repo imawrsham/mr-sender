@@ -45,6 +45,13 @@ class Sms
             "content",
         ]));
 
-        return $response;
+        return $this->commonHelper->setStatus($response);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStatusMessage(){
+        return $this->commonHelper->statusMessage;
     }
 }
