@@ -134,17 +134,16 @@ class CommonHelper
     /**
      * @param $response
      * @return bool
+     * @throws Exception
      */
     public function setStatus($response)
     {
         $response = json_decode($response);
         if ($response->result == "failed") {
             $this->statusMessage = $response->message;
-
-            return false;
+            throw new Exception($response->message, 400);
         } else {
             $this->statusMessage = "OK";
-
             return true;
         }
     }
