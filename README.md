@@ -28,7 +28,7 @@ $aksoftwaresms = new Sms('<YOUR_USERNAME>', '<YOUR_PASSWORD>');
 
 $send = $aksoftwaresms->sendTextSms('<YOUR_SMS_MESSAGE>', 'RECIPIENT_NUMBER'
 );
-show result message
+//show result message
 echo $aksoftwaresms->getStatusMessage();
 
 // create object class with originator option
@@ -37,7 +37,7 @@ $aksoftwarefax = new Fax('<YOUR_USERNAME>', '<YOUR_PASSWORD>');
 
 $send = $aksoftwarefax->sendHtmlFax('<YOUR_HTML_MESSAGE>', 'RECIPIENT_NUMBER'
 );
-show result message
+//show result message
 echo $aksoftwarefax->getStatusMessage();
 
 
