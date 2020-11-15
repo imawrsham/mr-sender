@@ -141,9 +141,11 @@ class CommonHelper
         $response = json_decode($response);
         if ($response->result == "failed") {
             $this->statusMessage = $response->message;
+
             throw new Exception($response->message, 400);
         } else {
             $this->statusMessage = "OK";
+
             return true;
         }
     }
